@@ -1,0 +1,28 @@
+/**app.wxss**/
+page{
+  min-height: 100%;
+}
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+.nf-page-footer{
+  padding: 40rpx 0;
+  text-align: center;
+  color: #aaaaaa;
+  font-size: 14px;
+}
+.nf-active{
+  color: #14baff !important;
+}
+.nf-fl{
+  float: left;
+}
+.nf-fr{
+  float: right;
+}

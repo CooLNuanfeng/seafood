@@ -1,0 +1,55 @@
+<view class="nf-order-detail-welcome">
+    <image src="/images/icon/smile.png"></image>
+    <text>感谢你的购买和支持，欢迎您再次光临！</text>
+</view>
+<view class="nf-order-detail-status">
+    <view><text>订单号：</text>201704201345827</view>
+    <view class="nf-user-order-success nf-text-right">已完成</view>
+</view>
+<view class="nf-order-detail-address">
+    <view class="nf-order-address-user">
+        <image src="/images/icon/user_active.png"></image>
+        <text>Blue</text>
+        <text>18601583176</text>
+    </view>
+    <view class="nf-order-address">山东省莱阳市古柳街道办事处</view>
+</view>
+<view class="nf-user-order">
+    <view class="nf-user-order-title">
+        <text class="nf-user-order-primany">两宝家海鲜行</text>
+    </view>
+    <view class="nf-user-order-body">
+        <image src="/images/listImg/001.jpg"></image>
+        <view class="nf-user-order-info">Hello world</view>
+    </view>
+    <view class="nf-user-order-footer">
+        <text>购买重量：2kg</text>
+        <text>实付款：<text class="nf-user-order-danger">￥ 200</text> 元</text>
+    </view>
+</view>
+<view class="nf-order-detail-way">
+    <view class="nf-order-way-item">
+        <view class="nf-order-way-list">
+            <view class="nf-order-way-label">支付方式</view>
+            <view class="nf-order-way-info">微信支付</view>
+        </view>
+    </view>
+    <view class="nf-order-way-item">
+        <view class="nf-order-way-list">
+            <view class="nf-order-way-label">配送信息</view>
+            <view class="nf-order-way-info">已配送</view>
+        </view>
+        <view class="nf-order-way-detail">配送时间：<text>2017-04-20</text></view>
+    </view>
+    <view class="nf-order-way-item">
+        <view class="nf-order-way-list">
+            <view class="nf-order-way-label">商品总额</view>
+            <view class="nf-order-way-info">￥200.00</view>
+        </view>
+        <view class="nf-order-way-detail">+运费 <text>￥6.00</text></view>
+    </view>
+    <view class="nf-order-way-footer">
+        实付款：￥206.00
+    </view>
+</view>
+<view class="nf-page-footer">两宝家海鲜行欢迎您</view>

@@ -1,0 +1,149 @@
+page{
+    background: #f4f4f4;
+}
+.nf-order-detail-welcome{
+    display: flex;
+    padding: 10rpx 20rpx;
+    font-size: 14px;
+    color: #333333;
+    background: #ffffff;
+    margin-bottom: 20rpx;
+    align-items: center
+}
+.nf-order-detail-welcome image{
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+}
+.nf-order-detail-welcome text{
+    flex: 1;
+}
+.nf-order-detail-status{
+    padding: 20rpx;
+    display: flex;
+    font-size: 14px;
+    flex-direction: row;
+    margin-bottom: 20rpx;
+    background: #ffffff;
+}
+.nf-order-detail-status view{
+    flex: 1;
+}
+.nf-order-detail-status text{
+    color: #666666;
+}
+.nf-text-right{
+    text-align: right;
+}
+
+.nf-order-detail-address{
+    background: #ffffff;
+    padding: 10rpx 20rpx;
+    font-size: 14px;
+    margin-bottom: 20rpx;
+}
+
+.nf-order-address-user{
+    display: flex;
+    align-items: center;
+}
+.nf-order-address-user image{
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+}
+.nf-order-address-user text{
+    flex: 1;
+}
+.nf-order-address{
+    padding-top: 10rpx;
+    padding-left: 60rpx;
+    font-size: 12px;
+    color: #666666;
+}
+
+.nf-user-order{
+    margin: 15rpx 0;
+    background: #ffffff;
+}
+.nf-user-order-title{
+    display: flex;
+    padding: 10rpx 20rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 14px;
+    color: #333333;
+    border-bottom: 1px solid #f4f4f4;
+}
+.nf-user-order-title>text,.nf-user-order-footer>text{
+   flex: 1;
+}
+.nf-user-order-footer>text:last-child{
+    text-align: right;
+}
+.nf-user-order-body{
+    padding: 20rpx;
+    display: flex;
+    align-items: center;
+}
+.nf-user-order-body image{
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 30rpx;
+}
+.nf-user-order-info{
+    flex: 3;
+}
+.nf-user-order-footer{
+    display: flex;
+    padding: 10rpx 20rpx;
+    font-size: 14px;
+    height: 40rpx;
+    color: #666666;
+    line-height: 40rpx;
+    border-top: 1px solid #f4f4f4;
+}
+
+.nf-order-detail-way{
+    background: #ffffff;
+}
+
+.nf-order-way-item{
+    padding: 10rpx 20rpx;
+    font-size: 14px;
+    border-bottom: 1px solid #f4f4f4;
+}
+.nf-order-way-list{
+    display: flex;
+    padding: 5rpx 0;
+}
+.nf-order-way-label{
+    flex: 1;
+    color: #666666;
+}
+.nf-order-way-info{
+    flex: 1;
+    text-align: right;
+}
+.nf-order-way-detail{
+    padding: 5rpx 0;
+}
+.nf-order-way-detail text{
+    float: right
+}
+.nf-order-way-footer{
+    text-align: right;
+    padding: 20rpx;
+    font-size: 14px;
+}
+
+
+.nf-user-order-danger{
+    color: #ff3333;
+}
+.nf-user-order-primany{
+    color: #14baff;
+}
+.nf-user-order-success{
+    color: #1aad16;
+}

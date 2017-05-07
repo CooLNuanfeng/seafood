@@ -1,0 +1,56 @@
+<view class="nf-user-head">
+    <view class="nf-user-info">
+        <image src="{{avatarUrl}}" class="nf-user-avatar"></image>
+        <text>{{nickName}}</text>
+    </view>
+    <view class="nf-user-action">
+        <view><image src="/images/icon/logout.png"></image><text>退出</text></view>
+        <view bindtap="gofeedback"><image src="/images/icon/feedback.png"></image><text>反馈</text></view>
+    </view>
+</view>
+<view class="nf-user-order" bindtap="orderdetail" data-orderid="201704201345782">
+    <view class="nf-user-order-title">
+        <text>订单号：201704201345782</text>
+        <text class="nf-user-order-danger">待发货</text>
+    </view>
+    <view class="nf-user-order-body">
+        <image src="/images/listImg/001.jpg"></image>
+        <view class="nf-user-order-info">Hello world </view>
+        <image class="nf-order-icon-detail" src="/images/icon/arrow.png"></image>
+    </view>
+    <view class="nf-user-order-footer">
+        <text>购买重量：2kg</text>
+        <text>实付款：<text class="nf-user-order-danger">￥ 200</text> 元</text>
+    </view>
+</view>
+<view class="nf-user-order">
+    <view class="nf-user-order-title">
+        <text>订单号：201704201345782</text>
+        <text class="nf-user-order-primany">已发货</text>
+    </view>
+    <view class="nf-user-order-body">
+        <image src="/images/listImg/001.jpg"></image>
+        <view class="nf-user-order-info">Hello world </view>
+        <image class="nf-order-icon-detail" src="/images/icon/arrow.png"></image>
+    </view>
+    <view class="nf-user-order-footer">
+        <text>购买重量：2kg</text>
+        <text>实付款：<text class="nf-user-order-danger">￥ 200</text> 元</text>
+    </view>
+</view>
+<view class="nf-user-order">
+    <view class="nf-user-order-title">
+        <text>订单号：201704201345782</text>
+        <text class="nf-user-order-success">已完成</text>
+    </view>
+    <view class="nf-user-order-body">
+        <image src="/images/listImg/001.jpg"></image>
+        <view class="nf-user-order-info">Hello world </view>
+        <image class="nf-order-icon-detail" src="/images/icon/arrow.png"></image>
+    </view>
+    <view class="nf-user-order-footer">
+        <text>购买重量：2kg</text>
+        <text>实付款：<text class="nf-user-order-danger">￥ 200</text> 元</text>
+    </view>
+</view>
+<view class="nf-page-footer">两宝家海鲜行欢迎您</view>

@@ -1,0 +1,22 @@
+<view class="nf-edit-address">
+    <view class="nf-edit-item">
+        <text>收件人：</text>
+        <input placeholder="请输入收件人姓名" />
+    </view>
+    <view class="nf-edit-item">
+        <text>手机号码：</text>
+        <input placeholder="请输入收件人手机号" />
+    </view>
+    <view class="nf-edit-item">
+        <text>收货省市：</text>
+        <input placeholder="请输入收件人所在省市" />
+    </view>
+    <view class="nf-edit-item">
+        <text>详细地址：</text>
+        <textarea placeholder="请输入详细地址" />
+    </view>
+</view>
+<view class="nf-edit-button">
+    <button class="nf-edit-btn-del">删除</button>
+    <button class="nf-edit-btn-save">保存并使用</button>
+</view>

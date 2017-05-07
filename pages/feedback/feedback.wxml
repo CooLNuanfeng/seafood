@@ -1,0 +1,7 @@
+<view class="nf-feedback">
+    <view class="nf-feedback-title">如果您有什么意见或建议 欢迎在下方留言</view>
+    <textarea class="nf-feedback-text" placeholder="请输入您的意见或建议" />
+    <button class="nf-feedback-btn">提交</button>
+</view>
+<view class="nf-page-footer">两宝家海鲜行欢迎您</view>
+

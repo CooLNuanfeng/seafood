@@ -1,0 +1,51 @@
+<!--index.wxml-->
+<view class="nf-position">
+    <view class="nf-classify-box">
+        <view class="nf-classify-item" wx:for="{{classify}}">
+            <block wx:if="{{item.page == nowPage}}">
+                <view bindtap="goPage" data-page="{{item.page}}"><image src="{{item.srcActive}}"></image></view>
+                <view bindtap="goPage" data-page="{{item.page}}" class="nf-active">{{item.name}}</view>
+            </block>
+            <block wx:else>
+                <view bindtap="goPage" data-page="{{item.page}}"><image src="{{item.src}}"></image></view>
+                <view bindtap="goPage" data-page="{{item.page}}">{{item.name}}</view>
+            </block>
+        </view>
+    </view>
+    <view class="nf-position-title">
+        <view class="nf-fl">当前: 鱼类</view>
+        <view class="nf-fr">两宝家海鲜行</view>
+    </view>
+</view>
+<view class="nf-list-warp">
+    <view class="nf-list-box">
+        <view wx:for="{{listData}}" wx:key="id">
+            <view id="{{item.id}}" class="nf-list-item" data-list="{{item.id}}" bindtap="listTap">
+                <view class="nf-list-tag" wx:if="{{item.tag}}">
+                        <text>{{item.tag}}</text>
+                </view>
+                <image class="nf-list-img" src="{{item.imgsrc}}"></image>
+                <view class="nf-list-info">
+                    <view class="nf-list-title">
+                        <text>{{item.title}}</text>
+                    </view>
+                    <view class="nf-list-desc">
+                        <text>{{item.description}}</text>
+                    </view>
+                    <view class="nf-list-detail">
+                        <view class="nf-list-price">
+                                <text class="nf-price-flag">￥</text>
+                                <text class="nf-price-number">{{item.price}}</text>
+                                <text class="nf-price-unit">元起/kg</text>
+                        </view>
+                        <view class="nf-list-zan">
+                                <image src="../../images/icon/like.png"></image><text>{{item.likeCount}}</text>
+                                <image src="../../images/icon/shop.png"></image><text>{{item.shopCount}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="nf-page-footer">两宝家海鲜行欢迎您</view>
+    </view>
+</view>

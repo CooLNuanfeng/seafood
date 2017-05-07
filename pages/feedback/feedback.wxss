@@ -1,0 +1,22 @@
+
+.nf-feedback{
+    padding: 40rpx 20rpx;
+}
+.nf-feedback-title{
+    font-size: 16px;
+}
+.nf-feedback-text{
+    margin: 20rpx 0;
+    width: 100%;
+    height: 150rpx;
+    padding: 10rpx;
+    font-size: 14px;
+    box-sizing: border-box;
+    border-radius: 5rpx;
+    border: 1px solid #f4f4f4;
+}
+.nf-feedback-btn{
+    background: #14baff;
+    color: #ffffff;
+    font-size: 14px;
+}

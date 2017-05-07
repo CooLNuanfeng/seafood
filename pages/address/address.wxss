@@ -1,0 +1,79 @@
+page{
+    height: 100%;
+    background: #f4f4f4;
+}
+.nf-address-default{
+    position: relative;
+    padding: 20rpx 100rpx;
+    padding-left: 40rpx;
+    background: #ffffff;
+}
+.nf-address-item{
+    position: relative;
+    padding: 20rpx 100rpx;
+    padding-left: 20rpx;
+    background: #ffffff;
+    border-bottom: 1px solid #f4f4f4;
+}
+.nf-address-default-icon{
+    position: absolute;
+    left: 10rpx;
+    top: 40rpx;
+    width: 40rpx;
+    height: 40rpx;
+}
+.nf-address-default-info{
+    display: flex;
+    padding: 0 20rpx;
+    flex-direction: column;
+    border-right: 1px solid #dddddd;
+}
+.nf-address-text{
+    flex: 1;
+    font-size: 14px;
+    padding-bottom: 5rpx;
+    line-height: 20px;
+}
+.nf-address-text text{
+    padding: 5rpx 8rpx;
+    border-radius: 2px;
+    margin-right: 4px;
+    color: #ffffff;
+    font-size: 12px;
+    background: #d81e06;
+}
+.nf-address-name{
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    padding: 5rpx 0;
+}
+.nf-address-name text:last-child{
+    text-align: right;
+}
+.nf-address-name text{
+    flex: 1;
+}
+.nf-address-edit{
+    position: absolute;
+    right: 20rpx;
+    top: 30rpx;
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.nf-address-line{
+    height: 4rpx;
+    background: url(/images/icon/line.png) repeat-x;
+    margin-bottom: 20rpx;
+}
+
+.nf-edit-button{
+    padding: 50rpx;
+}
+.nf-edit-button button{
+    height: 70rpx;
+    font-size: 14px;
+    background: #ffffff;
+}

@@ -1,0 +1,87 @@
+<view class="page">
+    <view class="nf-user" bindtap="editAddress">
+        <view class="nf-user-address" wx:if="{{userAddress}}">
+            <image src="/images/icon/arrow.png" class="nf-user-address-edit"></image>
+            <view class="nf-user-info">
+                <text class="nf-user-name">blue</text>
+                <view class="nf-user-phone">186****3176 <text class="nf-user-default">默认</text></view>
+            </view>
+            <view class="nf-user-address-info">
+                <image class="nf-address-icon" src="/images/icon/position.png"></image>
+                <text>山东省莱阳市古柳街道办事处</text>
+            </view>
+        </view>
+        <view class="nf-user-add-adress" wx:if="{{!userAddress}}">
+            <button class="nf-add-address-btn"> + 请添加您的收货地址</button>
+        </view>
+    </view>
+    <view class="nf-address-line"></view>
+    <view class="nf-shop-info">
+        <image src="/images/listImg/001.jpg" class="nf-shop-info-img"></image>
+        <view class="nf-shop-text">
+            <text class="nf-shop-title">hello world</text>
+            <view class="nf-shop-price">
+                <view class="nf-shop-price-item">
+                    <text class="nf-shop-price-name">单价:</text>
+                    <text class="nf-shop-price-num">{{unitPrice}}</text>
+                    <text class="nf-shop-price-unit">元/kg</text>
+                </view>
+                <!--<view class="nf-shop-price-item">
+                    <text class="nf-shop-price-name">重量:</text>
+                    <text class="nf-shop-price-num">2</text>
+                    <text class="nf-shop-price-unit">kg</text>
+                </view>-->
+            </view>
+            <view class="nf-shop-notice">
+                <text>说明</text> 为了XXX 请 XXX
+            </view>
+            <!--<view class="nf-shop-pay">
+                <text class="nf-shop-price-name">总价:</text>
+                <text class="nf-shop-all-price">200</text>
+                <text class="nf-shop-price-unit">元</text>
+            </view>-->
+        </view>
+    </view>
+    <view class="nf-shop-other-list">
+        <view class="nf-shop-list-item">
+            <text>购买数量(kg)</text>
+             <picker value="{{weight}}" range="{{weightArr}}" bindchange="bindWeightChange">
+                <view class="picker">{{weight}}kg</view>
+                <image class="nf-shop-icon" src="/images/icon/arrow-btm.png"></image>
+            </picker>
+        </view>
+        <view class="nf-shop-list-item">
+            <text>配送方式</text>
+            <picker value="{{express}}" range="{{expressArr}}" bindchange="bindSendChange">
+                <view class="picker">{{express}}</view>
+                <image class="nf-shop-icon" src="/images/icon/arrow-btm.png"></image>
+            </picker>
+        </view>
+        <view class="nf-shop-list-item">
+            <text>运费</text>
+            <view class="nf-shop-express-price">
+               <view wx:if="{{!freeShipping}}">￥ {{unitExpress}}/kg * {{weight}} = <text>{{unitExpress * weight}}元</text></view>
+               <view wx:if="{{freeShipping}}">0 元(包邮)</view>
+            </view>
+        </view>
+        <view class="nf-shop-list-item">
+            <text>配送时间</text>
+            <picker mode="date" value="{{today}}" start="{{today}}" end="{{endTime}}" bindchange="bindDateChange">
+                <view class="picker">{{today}}</view>
+                <image class="nf-shop-icon" src="/images/icon/time.png"></image>
+            </picker>
+        </view>
+        <view class="nf-shop-list-item nf-shop-list-message">
+            <text>买家留言</text>
+            <textarea placeholder="请输入您的留言 100字以内" />
+        </view>
+    </view>
+    <view class="nf-price-compute">
+        <view class="nf-price-notice">总计:  <text>{{allPrice}}</text> 元</view>
+        <view wx:if="{{!freeShipping}}" class="nf-price-notice-express">(含运费 {{unitExpress * weight}} 元)</view>
+        <view class="nf-price-pay-money">
+            <button type="primary">微信支付</button>
+        </view>
+    </view>
+    <view class="nf-page-footer">两宝家海鲜行欢迎您</view>
+</view>

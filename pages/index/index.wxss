@@ -1,0 +1,135 @@
+page{
+    min-height: 100%;
+    background: #f4f4f4;
+    box-sizing: border-box;
+}
+.nf-position{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 120rpx;
+    z-index: 10;
+    background: #ffffff;
+}
+.nf-classify-box{
+    display: flex;
+    flex-direction: row; 
+    padding: 20rpx;
+    height: 80rpx;
+}
+.nf-classify-item{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nf-classify-item view{
+    flex: 1;
+    font-size: 12px;
+    color: #999999;
+}
+.nf-classify-item view image{
+    width: 70rpx;
+    height: 70rpx;
+}
+.nf-position-title{
+    padding: 0 20rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    font-size: 12px;
+    color: #14baff;
+    background: #ffffff;
+}
+
+
+.nf-list-warp{
+    padding-top: 210rpx;
+}
+.nf-list-box{
+    padding: 20rpx;
+}
+.nf-list-item{
+    position: relative;
+    background: #ffffff;
+    margin-bottom: 20rpx;
+    box-shadow: 0 2rpx 2rpx rgba(0, 0, 0, .3);
+}
+.nf-list-tag{
+    position: absolute;
+    top: 0;
+    left: -5rpx;
+    z-index: 2;
+    padding: 10rpx 25rpx;
+    color: #ffffff;
+    font-size: 30rpx;
+    background: #fc1318;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+.nf-list-tag::before{
+    content: '';
+    position: absolute;
+    bottom: -10rpx;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 10rpx solid #c30308;
+    border-left: 10rpx solie transparent;
+}
+.nf-list-img{
+    width: 100%;
+    height: 450rpx;
+}
+.nf-list-info{
+    padding: 10rpx 20rpx;
+    border-bottom-left-radius: 10rpx;
+    border-bottom-right-radius: 10rpx;
+    overflow: hidden;
+}
+.nf-list-title{
+    width: 100%;
+    font-size: 50rpx;
+    color: #333;
+    padding: 10rpx 0;
+}
+.nf-list-desc{
+    font-size: 40rpx;
+    color: #666;
+}
+.nf-list-detail{
+    display: flex;
+    flex-direction: row;
+    font-size: 30rpx;
+    padding: 15rpx 0;
+}
+.nf-list-price,.nf-list-zan{
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+.nf-list-zan{
+    text-align: right;
+    justify-content: flex-end;
+    align-items:flex-end;
+}
+.nf-list-zan text{
+    font-size: 14px;
+    color: #666666;
+    margin: 0 5rpx;
+}
+.nf-list-zan image{
+    width: 35rpx;
+    height: 35rpx;
+    margin-left: 20rpx;
+}
+.nf-price-flag,.nf-price-number{
+    color: #fc1318;
+}
+.nf-price-number{
+    font-size: 60rpx;
+    padding: 0 10rpx;
+}
+.nf-price-unit{
+    color: #666;
+}
