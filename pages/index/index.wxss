@@ -8,15 +8,15 @@ page{
     top: 0;
     right: 0;
     left: 0;
-    height: 120rpx;
+    height: 140rpx;
     z-index: 10;
     background: #ffffff;
 }
 .nf-classify-box{
     display: flex;
     flex-direction: row; 
-    padding: 20rpx;
-    height: 80rpx;
+    padding: 40rpx 20rpx 0;
+    height: 100rpx;
 }
 .nf-classify-item{
     flex: 1;
@@ -45,7 +45,7 @@ page{
 
 
 .nf-list-warp{
-    padding-top: 210rpx;
+    padding-top: 220rpx;
 }
 .nf-list-box{
     padding: 20rpx;
@@ -79,7 +79,6 @@ page{
 }
 .nf-list-img{
     width: 100%;
-    height: 450rpx;
 }
 .nf-list-info{
     padding: 10rpx 20rpx;

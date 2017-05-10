@@ -13,7 +13,7 @@
         </view>
     </view>
     <view class="nf-position-title">
-        <view class="nf-fl">当前: 鱼类</view>
+        <view class="nf-fl">当前: {{nowName}}</view>
         <view class="nf-fr">两宝家海鲜行</view>
     </view>
 </view>

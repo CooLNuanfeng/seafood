@@ -5,12 +5,13 @@ var wilddog = app.getDataRef();
 Page({
   data: {
     nowPage : 'fish',
+    nowName : '鱼类',
     classify : [
       {'src' : '../../images/icon/fish.png','name':'鱼类','srcActive': '../../images/icon/fish_active.png','page' :'fish'},
-      {'src' : '../../images/icon/shrimp.png','name':'虾蟹','srcActive': '../../images/icon/shrimp_active.png','page' :'shrimpcrabs'},
-      {'src' : '../../images/icon/fish.png','name':'鱼类','srcActive': '../../images/icon/fish_active.png','page' :'fish'},
-      {'src' : '../../images/icon/fish.png','name':'鱼类','srcActive': '../../images/icon/fish_active.png','page' :'fish'},
-      {'src' : '../../images/icon/fish.png','name':'鱼类','srcActive': '../../images/icon/fish_active.png','page' :'fish'}
+      {'src' : '../../images/icon/shrimpcrabs.png','name':'虾蟹','srcActive': '../../images/icon/shrimpcrabs_active.png','page' :'shrimpcrabs'},
+      {'src' : '../../images/icon/shellfish.png','name':'参贝','srcActive': '../../images/icon/shellfish_active.png','page' :'shellfish'},
+      {'src' : '../../images/icon/dry.png','name':'干货','srcActive': '../../images/icon/dry_active.png','page' :'dry'},
+      {'src' : '../../images/icon/other.png','name':'其他','srcActive': '../../images/icon/other_active.png','page' :'other'}
     ],
     listData : [],
     // listData : [
@@ -61,7 +62,13 @@ Page({
   },
   goPage : function(event){
     var nowPage = event.currentTarget.dataset.page;
-    console.log(nowPage);
+    var nameJson = {
+      'fish' : '鱼类',
+      'shrimpcrabs' : '虾蟹',
+      'shellfish' : '参贝',
+      'dry' : '干货',
+      'other' : '其他'
+    };
     var _this = this;
 
     var query = wilddog.sync().ref('indexData/'+nowPage);
@@ -71,6 +78,7 @@ Page({
         console.log(data,'data');
         _this.setData({
           nowPage : nowPage,
+          nowName : nameJson[nowPage],
           listData : data
         })
     });
