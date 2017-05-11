@@ -9,17 +9,19 @@ Page({
   onLoad:function(options){
     // 生命周期函数--监听页面加载
     var _this = this;
-    var pageId = options.pageId
+    var keyId = options.pageId;
+    var classify = options.pageType;
+    
     var wilddog = app.getDataRef();
-    var query = wilddog.sync().ref('detailData');
+    var query = wilddog.sync().ref('indexData/'+classify);
     query.on('value',function(snapshot,prev){
         
-        var result = snapshot.val();
+        var result = snapshot.val()[keyId];
         console.log(result,'result  result  result');
         _this.setData({
-          bannerImgUrls : result[pageId].bannerImg,
-          context : result[pageId].context,
-          contextImg : result[pageId].contextImg
+          bannerImgUrls : result.bannerImgsrc,
+          context : result.content,
+          contextImg : result.contentImgsrc
         });
     });
   },

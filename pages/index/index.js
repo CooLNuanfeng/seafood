@@ -85,9 +85,10 @@ Page({
   },
   listTap : function(event){
       console.log(event);
-      var pageId = event.currentTarget.dataset.list;
+      var pageId = event.currentTarget.dataset.keyid;
+      var pageType = event.currentTarget.dataset.type;
       wx.navigateTo({
-        url: '/pages/detail/detail?pageId='+pageId
-      })
+        url: '/pages/detail/detail?pageId='+pageId+'&pageType='+pageType
+      });
   }
 })

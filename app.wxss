@@ -26,3 +26,9 @@ page{
 .nf-fr{
   float: right;
 }
+.nf-red{
+  color: #fc1318 !important;
+}
+.nf-gray{
+  color: #aaaaaa !important;
+}

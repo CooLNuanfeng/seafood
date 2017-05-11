@@ -24,5 +24,6 @@
 
 .nf-detail-img image{
     width: 100%;
+    min-height: 240px;
     margin-bottom: 20rpx;
 }
