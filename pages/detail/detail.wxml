@@ -7,10 +7,10 @@
         </block>
     </swiper>
     <view class="nf-detail-warp">
-        <text>{{context}}</text>
+        <view class="nf-detail-content">{{context}}</view>
         <view class="nf-detail-img">
             <block wx:for="{{contextImg}}">
-                <image src="{{item}}"></image>
+                <image src="{{item}}" mode="widthFix"></image>
             </block>
         </view>
     </view>

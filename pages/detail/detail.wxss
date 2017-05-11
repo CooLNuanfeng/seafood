@@ -17,6 +17,9 @@
 .nf-detail-warp{
     padding: 20rpx 20rpx 110rpx;
 }
+.nf-detail-content{
+    margin-bottom: 20rpx;
+}
 .nf-goshop{
     background: #14baff;
     color: #fff;
@@ -24,6 +27,5 @@
 
 .nf-detail-img image{
     width: 100%;
-    min-height: 240px;
     margin-bottom: 20rpx;
 }
