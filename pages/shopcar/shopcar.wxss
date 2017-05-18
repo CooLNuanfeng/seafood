@@ -1,0 +1,178 @@
+page{
+    width: 100%;
+    overflow: hidden;
+    background: #f4f4f4;
+}
+.nf-shopcar-page{
+    padding-bottom: 100rpx;
+}
+.nf-shopcar-no{
+    display: none;
+    padding: 100rpx 0;
+    text-align: center;
+}
+.nf-shopcar-no-title{
+    font-size: 14px;
+    color: #999;
+    padding: 20rpx 0;
+}
+.nf-shopcar-no-txt{
+    font-size: 12px;
+    color: #aaa;
+    padding-bottom: 50rpx;
+}
+.nf-shopcar-no text{
+    width:30rpx;
+    height: 40rpx;
+    color: #14baff;
+    font-size: 12px;
+    border: 1rpx solid #14baff;
+    padding: 15rpx 30rpx;
+}
+.nf-shopcar-head{
+    padding: 15rpx;
+    display: flex;
+    height: 70rpx;
+    font-size: 12px;
+    background: #fff;
+    align-items: center;
+    border-bottom: 1rpx solid #dadada;
+}
+.nf-shopcar-list{
+    width: 100%;
+    overflow: hidden;
+}
+.nf-shopcar-select{
+    width: 50rpx;
+    padding: 10rpx;
+}
+.nf-no-select{
+    width: 35rpx;
+    height: 35rpx;
+    border: 1rpx solid #aaa;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.nf-shopcar-select image{
+    width: 40rpx;
+    height: 40rpx;
+    display: inline-block;
+}
+.nf-shop-name{
+    flex: 1;
+    color: #14baff;
+    font-size: 12px;
+}
+.nf-shop-name image{
+    width: 40rpx;
+    height: 40rpx;
+    vertical-align: middle;
+}
+
+.nf-shopcar-warp{
+    display: flex;
+    padding: 15rpx 0;
+    height: 120rpx;
+    border-bottom:1px solid #dadada;
+    align-items: center;
+    background: #fff;
+    font-size: 12px;
+    margin-left: -90rpx;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+    -webkit-transform: translateX(90rpx);
+    transform: translateX(90rpx);
+}
+.nf-shopcar-warp.del-active{
+    -webkit-transform: translateX(0rpx);
+    transform: translateX(0rpx);
+}
+.nf-shopcar-info{
+    flex: 1;
+    display: flex;
+}
+.nf-shopcar-info image{
+    width: 120rpx;
+    height: 120rpx;
+}
+.nf-shopcar-cont{
+    flex: 1;
+    display: flex;
+    padding: 0 20rpx;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.nf-shop-title{
+    max-height: 88rpx;
+    line-height: 44rpx;
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.nf-shop-foot{
+    display: flex;
+    justify-content: space-between;
+    color: #666;
+}
+.nf-shopcar-del{
+    width: 90rpx;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #ff2d2d;
+    color: #fff;
+}
+.nf-shopcar-computer{
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90rpx;
+    background: #fff;
+    font-size: 12px;
+    align-items: center;
+}
+.nf-shopcar-comptxt{
+    flex: 1;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 20rpx;
+}
+.nf-shopcar-price{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #999;
+    text-align: right;
+}
+.nf-shopcar-allprice{
+    color: #ff2d2d;
+}
+.nf-shopcar-buy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100rpx;
+    height: 100%;
+    background: #ff2d2d;
+    color: #fff;
+}
+.nf-shopcar-disable .nf-shopcar-buy{
+    background: #ccc;
+    color: #999;
+}
+.nf-shopcar-disable .nf-shopcar-allprice{
+    color: #999;
+}
+.nf-shopcar-disable .nf-shopcar-select.active view{
+    border: 1rpx solid #aaa;
+    background: none;
+}

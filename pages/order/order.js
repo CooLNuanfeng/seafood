@@ -1,3 +1,5 @@
+var app = getApp();
+
 Page({
   data:{
     userAddress : true, //是否有用户地址
@@ -7,7 +9,7 @@ Page({
     weight : '2',  // 购买重量
     allPrice : '', //总价格
     //weightArr: ['0.5kg','1kg','1.5kg','2kg','2.5kg','3kg','3.5kg','4kg','4.5kg','5kg','5.5kg','6kg','6.5kg','7kg','7.5kg','8kg','8.5kg','9kg','9.5kg','10kg'],
-    weightArr: ['0.5','1','1.5','2','2.5','3','3.5','4','4.5','5','5.5','6','6.5','7','7.5','8','8.5','9','9.5','10'],
+    weightArr: app.globalData.weightArr,
     expressArr : ['顺丰快递'],
     express : '顺丰快递',
     today : GetDateStr(),

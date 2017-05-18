@@ -7,11 +7,59 @@
         </block>
     </swiper>
     <view class="nf-detail-warp">
-        <view class="nf-detail-content">{{context}}</view>
-        <view class="nf-detail-img">
-            <block wx:for="{{contextImg}}">
-                <image src="{{item}}" mode="widthFix"></image>
-            </block>
+        <view class="nf-detail-title">上阿什利管理卡咖喱</view>
+        <view class="nf-detail-price nf-red">￥100.00 <text>元/kg</text></view>
+        <view class="nf-detail-desc">
+            <view class="nf-detail-content" bindtap="openPop">
+                <text>请选择重量</text>
+                <image class="nf-select-weight" src="/images/icon/arrow-btm.png"></image>
+            </view>
+        </view>
+        <view class="nf-detail-desc">
+            <view class="nf-detail-content">
+               <image class="nf-detail-icon" src="/images/icon/sure.png"></image> <text>店铺认证</text>
+               <image class="nf-detail-icon" src="/images/icon/sure.png"></image> <text>担保交易</text>
+            </view>
+        </view>
+        <view class="nf-detail-desc">
+            <view class="nf-detail-label">商品介绍</view>
+            <view class="nf-detail-content">
+                {{context}}
+            </view>
+        </view>
+        <view class="nf-detail-desc">
+            <view class="nf-detail-label">商品展示</view>
+             <view class="nf-detail-img">
+                <block wx:for="{{contextImg}}">
+                    <image src="{{item}}" mode="widthFix"></image>
+                </block>
+            </view>
+        </view>
+    </view>
+    <view class="nf-pop-mask {{popshow? 'active':''}}" bindtap="closePop"></view>
+    <view class="nf-pop-box {{popshow? 'active':''}}">
+        <view class="nf-pop-contain">
+              <view class="nf-pop-head">
+                <view class="nf-pop-img">
+                  <image src="/images/listImg/001.jpg"></image>
+                </view>
+                <view class="nf-pop-title">
+                    <view class="nf-pop-title-item">
+                          <view>hello world 阿斯蒂芬按实际的反馈啦发觉发送卡积分理科生的积分拉丝机疯狂圣诞节发是打飞机离开阿道夫是打飞机了阿斯蒂芬水电费垃圾安抚</view>
+                    </view>
+                    <view class="nf-pop-title-item"><text>单价:100 元/kg</text><text class="nf-red">总价: ￥ 0.00 元</text></view>
+                </view>
+                <image class="nf-pop-close" src="/images/icon/close.png" bindtap="closePop"></image>
+            </view>
+            <view class="nf-pop-body">
+                <view class="nf-pop-label">净含量(kg):</view>
+                <view class="nf-pop-weight">
+                    <text wx:for="{{weightArr}}" data-weight="{{item}}">{{item}}kg</text>
+                </view>
+            </view>
+            <view class="nf-pop-btn">
+                <button>确定</button>
+            </view>
         </view>
     </view>
     <view class="nf-detail-footer">

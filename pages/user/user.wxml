@@ -4,7 +4,6 @@
         <text>{{nickName}}</text>
     </view>
     <view class="nf-user-action">
-        <view><image src="/images/icon/logout.png"></image><text>退出</text></view>
         <view bindtap="gofeedback"><image src="/images/icon/feedback.png"></image><text>反馈</text></view>
     </view>
 </view>

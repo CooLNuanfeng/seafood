@@ -1,0 +1,51 @@
+<view class="nf-shopcar-page">
+    <view class="nf-shopcar-no">
+        <view class="nf-shopcar-no-title">购物车快饿扁了 (ㄒoㄒ)</view>
+        <view class="nf-shopcar-no-txt">快给我挑点宝贝</view>
+        <text>去逛逛</text>
+    </view>
+    <view class="nf-shopcar-head">
+        <view class="nf-shopcar-select">
+          <view class="nf-no-select" hidden="{{allSelected}}" bindtap="allSelect"></view>
+          <view hidden="{{!allSelected}}" bindtap="allnoSelect"><image src="/images/icon/select.png"></image></view>
+        </view>
+        <view class="nf-shop-name">
+            <image src="/images/icon/we.png"></image> 两宝家海鲜行
+        </view>
+    </view>
+    <view class="nf-shopcar-list">
+        <view wx:for="{{items}}" class="nf-shopcar-warp {{item.isTouchMove ? 'del-active': ''}}" bindtap="singSelect" bindtouchstart="touchStart" bindtouchmove="touchMove" data-index="{{index}}">
+            <view class="nf-shopcar-select">
+                <view class="nf-no-select" hidden="{{item.isSelected}}"></view>
+                <view hidden="{{!item.isSelected}}"><image src="/images/icon/select.png"></image></view>
+            </view>
+            <view class="nf-shopcar-info">
+                <image src="{{item.imgsrc}}"></image>
+                <view class="nf-shopcar-cont">
+                    <view class="nf-shop-title">{{item.title}}</view>
+                    <view class="nf-shop-foot">
+                        <text>{{item.price}}kg/元 *{{item.weight}}kg</text>
+                        <text class="nf-red">￥{{item.money}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="nf-shopcar-del" bindtap="del" data-index="{{index}}">删除</view>
+        </view>
+    </view>
+    <view class="nf-page-footer">两宝家海鲜行欢迎您</view>
+    <!-- disable  nf-shopcar-disable -->
+    <view class="nf-shopcar-computer {{allMoney==0 ? 'nf-shopcar-disable':''}}">
+         <view class="nf-shopcar-select">
+            <view class="nf-no-select" hidden="{{allSelected}}" bindtap="allSelect"></view>
+            <view hidden="{{!allSelected}}"><image src="/images/icon/select.png" bindtap="allnoSelect"></image></view>
+         </view>
+         <view class="nf-shopcar-comptxt">
+            <view class="nf-shopcar-all">全选</view>
+            <view class="nf-shopcar-price">
+                <view class="nf-shopcar-allprice">合计: ￥{{allMoney}}</view>
+                <view>不含运费</view>
+            </view>
+         </view>
+         <view class="nf-shopcar-buy">结算</view>
+    </view>
+</view>

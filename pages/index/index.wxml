@@ -38,10 +38,11 @@
                                 <text class="nf-price-number">{{item.price}}</text>
                                 <text class="nf-price-unit">元起/kg</text>
                         </view>
-                        <view class="nf-list-zan">
+                        <view class="nf-list-link">查看详情</view>
+                        <!--<view class="nf-list-zan">
                                 <image src="../../images/icon/like.png"></image><text>{{item.likeCount}}</text>
                                 <image src="../../images/icon/shop.png"></image><text>{{item.shopCount}}</text>
-                        </view>
+                        </view>-->
                     </view>
                 </view>
             </view>

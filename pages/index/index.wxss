@@ -46,6 +46,7 @@ page{
 
 .nf-list-warp{
     padding-top: 220rpx;
+    height: 100%;
 }
 .nf-list-box{
     padding: 20rpx;
@@ -102,10 +103,16 @@ page{
     font-size: 30rpx;
     padding: 15rpx 0;
 }
-.nf-list-price,.nf-list-zan{
+.nf-list-price,.nf-list-zan,.nf-list-link{
     flex: 1;
     display: flex;
     align-items: center;
+}
+.nf-list-link{
+    font-size: 14px;
+    color: #14baff;
+    justify-content: flex-end;
+    align-items:flex-end;
 }
 .nf-list-zan{
     text-align: right;

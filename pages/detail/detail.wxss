@@ -1,5 +1,9 @@
+page{
+    background: #f6f6f6;
+}
 .nf-swiper{
     height: 400rpx;
+    background: #fff;
 }
 .nf-swiper-img{
     width: 100%;
@@ -11,21 +15,184 @@
     left: 0;
     right: 0;
     height: 80rpx;
-    padding: 20rpx;
     background: #f4f4f4;
 }
 .nf-detail-warp{
-    padding: 20rpx 20rpx 110rpx;
+    padding-bottom: 110rpx;
+}
+.nf-detail-title{
+    padding: 15rpx 20rpx;
+    font-size: 16px;
+    background: #fff;
+}
+.nf-detail-price{
+    padding: 0 20rpx;
+    padding-bottom: 15rpx;
+    font-size: 16px;
+    border-bottom: 1rpx solid #ddd;
+    background: #fff;
+}
+.nf-detail-price text{
+    color: #999;
+    font-size: 14px;
+}
+.nf-detail-desc{
+    margin: 20rpx 0;
+    font-size: 14px;
+    background: #fff;
+    border-top: 1rpx solid #ddd;
+    border-bottom: 1rpx solid #ddd;
+}
+.nf-detail-label{
+    padding: 20rpx;
+    color: #666;
 }
 .nf-detail-content{
-    margin-bottom: 20rpx;
+    padding: 20rpx;
+    min-height: 40rpx;
+    line-height: 40rpx;
+    background: #fff;
+}
+.nf-select-weight{
+  float: right;
+  width: 40rpx;
+  height: 40rpx;
+}
+.nf-detail-content text{
+    margin-left: 5rpx;
+    font-size: 12px;
+    margin-right: 30rpx;
 }
 .nf-goshop{
     background: #14baff;
     color: #fff;
 }
-
+.nf-detail-icon{
+    width: 30rpx;
+    height: 30rpx;
+    vertical-align: middle;
+}
 .nf-detail-img image{
     width: 100%;
-    margin-bottom: 20rpx;
+}
+
+
+/* pop */
+.nf-pop-mask{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.6);
+  z-index: 20;
+}
+.nf-pop-box{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transform: translateY(100%);
+  z-index: 21;
+}
+
+.nf-pop-mask.active{
+  display: block;
+}
+.nf-pop-box.active{
+  animation-fill-mode: forwards;
+  animation: moveup .3s linear;
+}
+
+.nf-pop-box{
+  background: #fff;
+}
+.nf-pop-head{
+   display: flex;
+   padding: 20rpx;
+   border-bottom: 1rpx solid #ebebeb;
+}
+.nf-pop-img{
+  width: 100rpx;
+  padding-right: 20rpx;
+}
+.nf-pop-img image{
+   width: 100rpx;
+   height: 100rpx;
+   margin-top: -30rpx;
+   border-radius: 5rpx;
+   border: 1rpx solid #ddd;
+}
+.nf-pop-title{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  overflow: hidden;
+}
+.nf-pop-title-item{
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+}
+.nf-pop-title-item view{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.nf-pop-title-item text{
+  color: #666;
+  font-size: 12px;
+}
+.nf-pop-close{
+  width: 40rpx;
+  height: 40rpx;
+}
+.nf-pop-body{
+  padding: 0 20rpx;
+}
+.nf-pop-label{
+  padding: 20rpx 0;
+  font-size: 14px;
+  color: #333;
+}
+.nf-pop-weight{
+  padding-bottom: 10rpx;
+}
+.nf-pop-weight text{
+  color: #666;
+  font-size: 12px;
+  padding: 10rpx 20rpx;
+  border: 1rpx solid #666;
+  border-radius: 2rpx;
+  margin-right: 10rpx;
+  margin-bottom: 10rpx;
+  display: inline-block;
+}
+.nf-pop-btn button{
+  height: 90rpx;
+  background: #14baff;
+  color: #fff;
+  border-radius: 0;
+}
+
+@keyframes moveup{
+  0%{
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+@keyframes movedown{
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(100%);
+  }
 }

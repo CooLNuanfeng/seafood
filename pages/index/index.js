@@ -48,15 +48,19 @@ Page({
   },
   onLoad: function () {
     var _this = this;
-   
     var query = wilddog.sync().ref('indexData/fish');
+
+    wx.showLoading({
+      title: '加载中...'
+    });
     query.on('value',function(snapshot,prev){
         //console.log(snapshot.val());
         var data = snapshot.val();
         console.log(data,'data');
         _this.setData({
           listData : data
-        })
+        });
+        wx.hideLoading();
     });
    
   },
@@ -80,7 +84,7 @@ Page({
           nowPage : nowPage,
           nowName : nameJson[nowPage],
           listData : data
-        })
+        });
     });
   },
   listTap : function(event){

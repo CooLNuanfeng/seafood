@@ -4,7 +4,9 @@ Page({
   data:{
     bannerImgUrls : [],
     context : '',
-    contextImg : []
+    contextImg : [],
+    popshow : false, //pop 层
+    weightArr: app.globalData.weightArr,
   },
   onLoad:function(options){
     // 生命周期函数--监听页面加载
@@ -12,6 +14,9 @@ Page({
     var keyId = options.pageId;
     var classify = options.pageType;
     
+    wx.showLoading({
+      title: '加载中...'
+    });
     var wilddog = app.getDataRef();
     var query = wilddog.sync().ref('indexData/'+classify);
     query.on('value',function(snapshot,prev){
@@ -23,11 +28,18 @@ Page({
           context : result.content,
           contextImg : result.contentImgsrc
         });
+        wx.hideLoading();
     });
   },
-  onReady:function(){
-    // 生命周期函数--监听页面初次渲染完成
-   
+  openPop: function(){
+    this.setData({
+      popshow: true
+    });
+  },
+  closePop: function(){
+    this.setData({
+      popshow: false
+    });
   },
   onShareAppMessage: function() {
     // 用户点击右上角分享
