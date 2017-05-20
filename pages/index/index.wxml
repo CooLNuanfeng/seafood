@@ -26,17 +26,13 @@
                 </view>
                 <image class="nf-list-img" src="{{item.imgsrc}}"></image>
                 <view class="nf-list-info">
-                    <view class="nf-list-title">
-                        <text>{{item.title}}</text>
-                    </view>
-                    <view class="nf-list-desc">
-                        <text>{{item.description}}</text>
-                    </view>
+                    <view class="nf-list-title">{{item.title}}</view>
+                    <view class="nf-list-desc">{{item.description}}</view>
                     <view class="nf-list-detail">
                         <view class="nf-list-price">
                                 <text class="nf-price-flag">￥</text>
                                 <text class="nf-price-number">{{item.price}}</text>
-                                <text class="nf-price-unit">元起/kg</text>
+                                <text class="nf-price-unit">元/kg</text>
                         </view>
                         <view class="nf-list-link">查看详情</view>
                         <!--<view class="nf-list-zan">

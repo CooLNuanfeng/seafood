@@ -7,11 +7,17 @@
         </block>
     </swiper>
     <view class="nf-detail-warp">
-        <view class="nf-detail-title">上阿什利管理卡咖喱</view>
-        <view class="nf-detail-price nf-red">￥100.00 <text>元/kg</text></view>
+        <view class="nf-detail-title">{{title}}</view>
+        <view class="nf-detail-price nf-red">
+            <view class="nf-red">￥ {{price}} <text>元/kg</text></view>
+            <view wx:if="{{limitArea==0}}" class="nf-detail-notice">
+                <image src="/images/icon/warning.png"></image> 新鲜保证仅售山东省省内
+            </view>
+        </view>
         <view class="nf-detail-desc">
             <view class="nf-detail-content" bindtap="openPop">
-                <text>请选择重量</text>
+                <text hidden="{{selectWeight==''?false:true}}">请选择重量</text>
+                <text hidden="{{selectWeight==''?true:false}}">购买重量: {{selectWeight}}kg</text>
                 <image class="nf-select-weight" src="/images/icon/arrow-btm.png"></image>
             </view>
         </view>
@@ -36,33 +42,38 @@
             </view>
         </view>
     </view>
-    <view class="nf-pop-mask {{popshow? 'active':''}}" bindtap="closePop"></view>
-    <view class="nf-pop-box {{popshow? 'active':''}}">
+    <view class="nf-detail-footer">
+        <view class="nf-one-step" bindtap="goIndex"><image src="/images/icon/home.png"></image></view>
+        <view class="nf-one-step" bindtap="goShopcar"><image src="/images/icon/shopcar.png"></image></view>
+        <view class="nf-add-shopcar" bindtap="addshop" data-shopid="{{shopid}}">加入购物车</view>
+        <view class="nf-goshop" bindtap="goshop" data-shopid="{{shopid}}">立即购买</view>
+    </view>
+    <view class="nf-pop-mask {{popshow ? 'active':''}}" bindtap="closePop"></view>
+    <view class="nf-pop-box {{popshow ? 'nf-pop-up':'nf-pop-down'}} {{animate ? 'nf-pop-once':''}}">
         <view class="nf-pop-contain">
-              <view class="nf-pop-head">
+             <view class="nf-pop-head">
                 <view class="nf-pop-img">
-                  <image src="/images/listImg/001.jpg"></image>
+                  <image src="{{imgsrc}}"></image>
                 </view>
                 <view class="nf-pop-title">
                     <view class="nf-pop-title-item">
-                          <view>hello world 阿斯蒂芬按实际的反馈啦发觉发送卡积分理科生的积分拉丝机疯狂圣诞节发是打飞机离开阿道夫是打飞机了阿斯蒂芬水电费垃圾安抚</view>
+                          <view>{{title}}</view>
                     </view>
-                    <view class="nf-pop-title-item"><text>单价:100 元/kg</text><text class="nf-red">总价: ￥ 0.00 元</text></view>
+                    <view class="nf-pop-title-item"><text>单价:{{price}} 元/kg</text><text class="nf-red">总价: ￥ {{money}} 元</text></view>
                 </view>
                 <image class="nf-pop-close" src="/images/icon/close.png" bindtap="closePop"></image>
             </view>
             <view class="nf-pop-body">
                 <view class="nf-pop-label">净含量(kg):</view>
                 <view class="nf-pop-weight">
-                    <text wx:for="{{weightArr}}" data-weight="{{item}}">{{item}}kg</text>
+                    <text wx:for="{{weightArr}}" class="{{item.selected ? 'nf-selected':''}}" data-weight="{{item.val}}" bindtap="selectWeight">{{item.val}}kg</text>
                 </view>
             </view>
             <view class="nf-pop-btn">
-                <button>确定</button>
+                <button hidden="{{!isBuy}}" bindtap="goshop">下一步</button>
+                <button hidden="{{isBuy}}" bindtap="sureAddshop">确定</button>
             </view>
         </view>
     </view>
-    <view class="nf-detail-footer">
-        <button class="nf-goshop" bindtap="goshop" data-shopid="{{shopid}}">立即购买</button>
-    </view>
+    <view class="nf-toast" hidden="{{hiddenToast}}">{{toast}}</view>
 </scroll-view>

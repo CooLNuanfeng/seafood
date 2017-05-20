@@ -11,11 +11,39 @@ page{
 }
 .nf-detail-footer{
     position: fixed;
+    display: flex;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 80rpx;
+    height: 90rpx;
+    line-height: 90rpx;
     background: #f4f4f4;
+    align-items: center;
+}
+.nf-one-step{
+    width: 60rpx;
+    height: 60rpx;
+    padding: 15rpx;
+    background: #f6f6f6;
+    border-right: 1rpx solid #ebebeb;
+}
+.nf-one-step image{
+    width: 60rpx;
+    height: 60rpx;
+}
+.nf-add-shopcar{
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  background: #14baff;
+}
+.nf-goshop{
+  flex: 1;
+  font-size: 14px;
+  color: #fff;
+  background: #fc1318;
+  text-align: center;
 }
 .nf-detail-warp{
     padding-bottom: 110rpx;
@@ -26,16 +54,29 @@ page{
     background: #fff;
 }
 .nf-detail-price{
+    display: flex;
     padding: 0 20rpx;
     padding-bottom: 15rpx;
     font-size: 16px;
     border-bottom: 1rpx solid #ddd;
     background: #fff;
+    justify-content: space-between;
+    align-items: center;
 }
 .nf-detail-price text{
     color: #999;
     font-size: 14px;
 }
+.nf-detail-notice{
+    font-size: 14px;
+    text-align: right;
+}
+.nf-detail-notice image{
+    width: 30rpx;
+    height: 30rpx;
+    vertical-align: middle;
+}
+
 .nf-detail-desc{
     margin: 20rpx 0;
     font-size: 14px;
@@ -63,10 +104,7 @@ page{
     font-size: 12px;
     margin-right: 30rpx;
 }
-.nf-goshop{
-    background: #14baff;
-    color: #fff;
-}
+
 .nf-detail-icon{
     width: 30rpx;
     height: 30rpx;
@@ -93,29 +131,37 @@ page{
   bottom: 0;
   left: 0;
   right: 0;
-  transform: translateY(100%);
+  animation-fill-mode: forwards;
   z-index: 21;
 }
-
+.nf-pop-contain{
+  background: #fff;
+  margin-top: 30rpx;
+}
 .nf-pop-mask.active{
   display: block;
 }
-.nf-pop-box.active{
-  animation-fill-mode: forwards;
+.nf-pop-box.nf-pop-up{
+  transform: translateY(0);
   animation: moveup .3s linear;
 }
-
-.nf-pop-box{
-  background: #fff;
+.nf-pop-box.nf-pop-down{
+  transform: translateY(100%);
+  animation: movedown .3s linear;
 }
+.nf-pop-box.nf-pop-once{
+  transform: translateY(100%);
+  animation: none;
+}
+
 .nf-pop-head{
    display: flex;
-   padding: 20rpx;
+   padding: 20rpx 0;
    border-bottom: 1rpx solid #ebebeb;
 }
 .nf-pop-img{
   width: 100rpx;
-  padding-right: 20rpx;
+  padding: 0 20rpx;
 }
 .nf-pop-img image{
    width: 100rpx;
@@ -126,6 +172,7 @@ page{
 }
 .nf-pop-title{
   flex: 1;
+  padding-right: 10rpx;
   display: flex;
   flex-direction: column;
   justify-content:center;
@@ -151,6 +198,8 @@ page{
 .nf-pop-close{
   width: 40rpx;
   height: 40rpx;
+  margin-top: 15rpx;
+  margin-right: 10rpx;
 }
 .nf-pop-body{
   padding: 0 20rpx;
@@ -168,10 +217,14 @@ page{
   font-size: 12px;
   padding: 10rpx 20rpx;
   border: 1rpx solid #666;
-  border-radius: 2rpx;
+  border-radius: 5rpx;
   margin-right: 10rpx;
   margin-bottom: 10rpx;
   display: inline-block;
+}
+.nf-pop-weight text.nf-selected{
+   color: #14baff;
+   border: 1rpx solid #14baff;
 }
 .nf-pop-btn button{
   height: 90rpx;

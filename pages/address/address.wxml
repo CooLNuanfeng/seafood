@@ -1,41 +1,35 @@
-<view class="nf-address-default">
-    <image src="/images/icon/ok.png" class="nf-address-default-icon" bindtap="edit"></image>
-    <view class="nf-address-default-info">
-        <view class="nf-address-name">
-            <text>blue</text>
-            <text>18601583176</text>
-        </view>
-        <view class="nf-address-text">
-            <text>默认</text>山东省莱阳市古柳街道办事处
-        </view>
-    </view>
-    <image src="/images/icon/edit.png" class="nf-address-edit" bindtap="edit"></image>
+<view hidden="{{hasAddress}}" class="nf-no-address">
+    <image src="/images/icon/address.png"></image>
+    <view>您还没有收获地址哟，马上添加一个吧</view>
 </view>
-<view class="nf-address-line"></view>
-<view class="nf-address-item">
-    <view class="nf-address-default-info">
-        <view class="nf-address-name">
-            <text>blue</text>
-            <text>18601583176</text>
+<view hidden="{{!hasAddress}}" wx:for="{{addressArr}}">
+    <view wx:if="{{item.isDefault}}">
+        <view  class="nf-address-default">
+            <image src="/images/icon/ok.png" class="nf-address-default-icon" bindtap="edit" data-edit="{{item.id}}"></image>
+            <view class="nf-address-default-info">
+                <view class="nf-address-name">
+                    <text>{{item.username}}</text>
+                    <text>{{item.userPhone}}</text>
+                </view>
+                <view class="nf-address-text">
+                    <text>默认</text>{{item.regionName}} {{item.userAddress}}
+                </view>
+            </view>
+            <image src="/images/icon/edit.png" class="nf-address-edit" bindtap="edit" data-edit="{{item.id}}"></image>
         </view>
-        <view class="nf-address-text">
-            山东省莱阳市古柳街道办事处
-        </view>
+        <view class="nf-address-line"></view>
     </view>
-    <image src="/images/icon/edit.png" class="nf-address-edit" bindtap="edit"></image>
-</view>
-<view class="nf-address-item">
-    <view class="nf-address-default-info">
-        <view class="nf-address-name">
-            <text>blue</text>
-            <text>18601583176</text>
+    <view wx:else class="nf-address-item">
+        <view class="nf-address-default-info">
+            <view class="nf-address-name">
+                <text>{{item.username}}</text>
+                <text>{{item.userPhone}}</text>
+            </view>
+            <view class="nf-address-text">{{item.regionName}} {{item.userAddress}}</view>
         </view>
-        <view class="nf-address-text">
-            山东省莱阳市古柳街道办事处
-        </view>
+        <image src="/images/icon/edit.png" class="nf-address-edit" bindtap="edit" data-edit="{{item.id}}"></image>
     </view>
-    <image src="/images/icon/edit.png" class="nf-address-edit" bindtap="edit"></image>
 </view>
 <view class="nf-edit-button">
-    <button type="default" bindtap="edit" data-edit="1"> + 新建收货地址 </button>
+    <button type="default" bindtap="edit"> + 新建收货地址 </button>
 </view>

@@ -1,20 +1,224 @@
-// pages/editaddress/editaddress.js
+import { Promise } from '../../utils/util';
+// 使用腾讯地图API
+const API = 'https://apis.map.qq.com/ws/district/v1/getchildren?key=MNZBZ-PJSW4-35BUY-DDZGQ-MEH77-FFF65';
+var addressArr;
 Page({
-  data:{},
-  onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
-    console.log(options,'页面的参数')
-  },
-  onReady:function(){
-    // 页面渲染完成
-  },
-  onShow:function(){
-    // 页面显示
-  },
-  onHide:function(){
-    // 页面隐藏
-  },
-  onUnload:function(){
-    // 页面关闭
-  }
-})
+    data: {
+        username : '',
+        userPhone: '',
+        userAddress : '',
+        isNewAdd : true, // 是否新增
+        hiddenToast: true,
+        //地区选择
+        isShowRegion: false,
+        provinceData: [],
+        cityData: [],
+        areaData: [],
+        region: [14, 0, 0],
+        regionName: ''
+    },
+    onLoad: function (options) {
+        console.log(options,'options')
+        addressArr = getStorageAddress()? getStorageAddress():[];
+        console.log(addressArr, 'addressArr')
+        if(options.edit){
+            this.setData({
+                isNewAdd: false
+            });
+        }
+
+        const me = this;
+        Promise(wx.request, {
+            url: API,
+            method: 'GET'
+        })
+        .then(res => {
+            if (+res.statusCode == 200) {
+                let provinceList = res.data.result[0];
+                me.setData({
+                    provinceData: provinceList,
+                });
+
+                let firstProvince = provinceList[14]; //默认山东
+
+                return Promise(wx.request, {
+                    url: API + '&id=' + firstProvince.id,
+                    method: 'GET'
+                })
+            }
+            else {
+                me.setData({ provinceData: [] });
+            }
+        })
+        .catch(err => {
+            me.setData({ provinceData: [] });
+        })
+        .then(res => {
+            if (+res.statusCode == 200) {
+                let cityList = res.data.result[0];
+                me.setData({
+                    cityData: cityList
+                });
+
+                let firstCity = cityList[0];
+
+                return Promise(wx.request, {
+                    url: API + '&id=' + firstCity.id,
+                    method: 'GET'
+                })
+            }
+            else {
+                me.setData({ cityData: [] });
+            }
+        })
+        .catch(err => {
+            me.setData({
+                cityData: []
+            });
+        })
+        .then(res=>{
+            me.setData({
+                areaData: res.data.result[0]
+            })
+        })
+    },
+    saveInfo: function(e){
+        let item = e.target.dataset.item;
+        let value = e.detail.value
+        let username = item == 'username'? value : this.data.username;
+        let userPhone = item == 'userPhone'? value: this.data.userPhone;
+        let userAddress = item == 'userAddress' ? value : this.data.userAddress;
+        this.setData({
+            username: username,
+            userPhone: userPhone,
+            userAddress: userAddress
+        })
+    },
+    save: function(){
+        let {username, userPhone, userAddress,isNewAdd} = this.data;
+        if (isNewAdd){
+            let id = new Date().getTime();
+            var json = {
+                id: id,
+                username: username,
+                userPhone: userPhone,
+                userAddress: userAddress,
+                regionName: this.data.regionName,
+                isDefault: true
+            }
+            addressArr.push(json);
+            setStorageAddress(addressArr);
+        }
+
+        wx.redirectTo({
+            url: '/pages/address/address'
+        });
+    },
+    showToast: function (str) {
+        var _this = this;
+        var timer;
+        if (this.data.hiddenToast) {
+            this.setData({
+                hiddenToast: false,
+                toast: str
+            });
+            clearTimeout(timer);
+            timer = setTimeout(function () {
+                clearTimeout(timer);
+                _this.setData({
+                    hiddenToast: true,
+                    toast: ''
+                });
+            }, 3000);
+        }
+    },
+
+    selectAddress: function(){
+        this.setData({
+            isShowRegion : true,
+        })
+    },
+    tapMasker: function () {
+        this.setData({ isShowRegion: false });
+    },
+    preventMaskerMove: function (e) {
+        e.preventDefault();
+    },
+    toggleShowRegion: function (e) {
+        this.setData({ isShowRegion: true });
+    },
+    cancelRegion: function (e) {
+        this.setData({ isShowRegion: false });
+    },
+    confirmRegion: function (e) {
+        let val = e.detail.value;
+        let {region, provinceData, cityData,areaData} = this.data;
+        console.log(region,'region')
+        let regionName = provinceData[region[0]].name + '省 ' + cityData[region[1]].name + '市 ' + areaData[region[2]].fullname;
+
+        this.setData({
+            regionName: regionName,
+            isShowRegion: false
+        });
+    },
+    bindRegionChange: function (e) {
+        let me = this;
+        let val = e.detail.value;
+        let provinceIndex = val[0];
+        let cityIndex = val[1];
+        let areaIndex = val[2];
+        let {provinceData,region} = me.data;
+       
+        Promise(wx.request, {
+            url: API + '&id=' + provinceData[provinceIndex].id,
+            method: 'GET'
+        })
+        .then(res => {
+            if (+res.statusCode == 200) {
+                let cityList = res.data.result[0];
+                region[0] = provinceIndex
+                me.setData({
+                    cityData: cityList,
+                    region: region
+                });
+    
+                let firstCity = cityList[cityIndex];
+                region[1] = cityIndex;
+                return Promise(wx.request, {
+                    url: API + '&id=' + firstCity.id,
+                    method: 'GET'
+                })
+            }
+            else {
+                me.setData({ cityData: [] });
+            }
+        })
+        .catch(err => {
+            me.setData({
+                cityData: []
+            });
+        })
+        .then(res => {
+            region[2] = areaIndex;
+            me.setData({
+                areaData: res.data.result[0],
+                region: region
+            })
+        })
+    }
+});
+
+function setStorageAddress(addressArr){
+    try{
+        wx.setStorageSync('addressArr', addressArr);
+    }catch(e){
+        console.log(e);
+    }
+}
+function getStorageAddress(){
+    try {
+       return wx.getStorageSync('addressArr');
+    } catch (e) {
+        console.log(e);
+    }
+}

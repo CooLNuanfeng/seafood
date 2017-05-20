@@ -2,6 +2,17 @@ page{
     height: 100%;
     background: #f4f4f4;
 }
+.nf-no-address{
+    font-size: 14px;
+    text-align: center;
+    color: #999;
+}
+.nf-no-address image{
+    width: 150rpx;
+    height: 150rpx;
+    margin-bottom: 30rpx;
+}
+
 .nf-address-default{
     position: relative;
     padding: 20rpx 100rpx;
@@ -65,7 +76,7 @@ page{
 
 .nf-address-line{
     height: 4rpx;
-    background: url(/images/icon/line.png) repeat-x;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAAICAMAAAB04Ke/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2MkFERjQ0RTRFRjMxMUU2OERBRkIyQTdFOEY4MTZDMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2MkFERjQ0RjRFRjMxMUU2OERBRkIyQTdFOEY4MTZDMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjYyQURGNDRDNEVGMzExRTY4REFGQjJBN0U4RjgxNkMzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjYyQURGNDRENEVGMzExRTY4REFGQjJBN0U4RjgxNkMzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+8vwpaQAAAFdQTFRF/////8zeutzx/+rx7fb7//L2/9nn/+HszOX1+/3+/8/gvt7y//z99fr91ur3/v7///j6u93x//7+/9PjxOHz4/H5/83f//7//v//u9zx/83e1+v34vD5t1jiSwAAAGRJREFUeNq80DkSgCAAQ1FUFllUFNy9/zmdsSHhAKb985oI8a1reEbA1pY3QlMbQ71AlDPDfiotOoYpABw8w2xLC4mhiwBtZuiH0nbN8FIAj57hKSGa6p0O37mrdx5o/9/6CjAAqZ0ECH/F2J4AAAAASUVORK5CYII=) repeat-x;
     margin-bottom: 20rpx;
 }
 
@@ -73,7 +84,10 @@ page{
     padding: 50rpx;
 }
 .nf-edit-button button{
-    height: 70rpx;
+    height: 80rpx;
+    line-height: 80rpx;
     font-size: 14px;
+    color: #14baff;
     background: #ffffff;
+    border: 1rpx solid #14baff;
 }

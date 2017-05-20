@@ -11,13 +11,15 @@ page{
     padding: 5rpx 15rpx;
 }
 .nf-add-address-btn{
-    background: #14baff;
-    color: #ffffff;
+    color: #14baff;
+    background: #ffffff;
+    border: 1rpx solid #14baff;
+    font-size: 14px;
 }
 .nf-address-line{
     height: 4rpx;
-    background: url(/images/icon/line.png) repeat-x;
     margin-bottom: 20rpx;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADkAAAAICAMAAAB04Ke/AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo2MkFERjQ0RTRFRjMxMUU2OERBRkIyQTdFOEY4MTZDMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo2MkFERjQ0RjRFRjMxMUU2OERBRkIyQTdFOEY4MTZDMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjYyQURGNDRDNEVGMzExRTY4REFGQjJBN0U4RjgxNkMzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjYyQURGNDRENEVGMzExRTY4REFGQjJBN0U4RjgxNkMzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+8vwpaQAAAFdQTFRF/////8zeutzx/+rx7fb7//L2/9nn/+HszOX1+/3+/8/gvt7y//z99fr91ur3/v7///j6u93x//7+/9PjxOHz4/H5/83f//7//v//u9zx/83e1+v34vD5t1jiSwAAAGRJREFUeNq80DkSgCAAQ1FUFllUFNy9/zmdsSHhAKb985oI8a1reEbA1pY3QlMbQ71AlDPDfiotOoYpABw8w2xLC4mhiwBtZuiH0nbN8FIAj57hKSGa6p0O37mrdx5o/9/6CjAAqZ0ECH/F2J4AAAAASUVORK5CYII=) repeat-x;
 }
 .nf-user-address{
     position: relative;
@@ -37,13 +39,16 @@ page{
     flex: 1;
     height: 30rpx;
     display: flex;
+    font-size: 14px;
 }
 .nf-user-address-info{
     flex: 1;
     padding-top: 10rpx;
+    font-size: 14px;
+    vertical-align: middle;
 }
 .nf-user-address-info text{
-    font-size: 16px;
+    font-size: 14px;
 }
 .nf-user-name{
     flex: 1;
@@ -54,11 +59,12 @@ page{
     font-weight: bold
 }
 .nf-user-phone{
-    flex: 3;
+    flex: 1;
     line-height: 60rpx;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    font-weight: bold
 }
 .nf-user-default{
     padding: 5rpx 15rpx;
@@ -73,36 +79,71 @@ page{
     height: 40rpx;
     vertical-align: middle;
 }
+.nf-shop-warp{
+    margin: 20rpx 0;
+    padding: 0 20rpx;
+    background: #ffffff;
+}
+.nf-shop-home{
+    border-bottom: 1rpx solid #ebebeb;
+    color: #14baff;
+    font-size: 12px;
+    line-height: 40px;
+}
+.nf-shop-home image{
+    width: 40rpx;
+    height: 40rpx;
+    vertical-align: middle;
+}
 .nf-shop-info{
     display: flex;
     padding: 15rpx;
     background: #ffffff;
+    border-bottom: 1rpx solid #ebebeb;
+}
+.nf-shop-info:last-child{
+    border-bottom: 0;
 }
 .nf-shop-info-img{
-    width: 200rpx;
-    height: 200rpx;
+    width: 135rpx;
+    height: 135rpx;
 }
 .nf-shop-text{
     flex: 1;
+    display: flex;
     padding-left: 15rpx;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .nf-shop-title{
-    font-size: 26px;
+    flex: 1;
+    padding: 10rpx 0;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .nf-shop-price{
-    padding: 10rpx 0;
+    flex: 1;
+    padding: 5rpx 0;
     display: flex;
 }
 .nf-shop-price-item{
     flex: 1;
-    font-size: 16px;
+    font-size: 12px;
+}
+.nf-shop-foot{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .nf-shop-price-name{
     color: #999999;
 }
 .nf-shop-price-num{
     color: #fc1318;
-    font-weight: bold;
     padding: 0 10rpx;
 }
 .nf-shop-price-unit{
@@ -110,10 +151,12 @@ page{
 }
 .nf-shop-all-price{
     color: #fc1318;
-    font-size: 22px;
+    padding: 0 10rpx;
+    font-size: 14px;
+    font-weight: bold;
 }
 .nf-shop-pay{
-    font-size: 16px;
+    font-size: 12px;
     text-align: right;
 }
 .nf-shop-other-list{
@@ -123,18 +166,22 @@ page{
 .nf-shop-list-item{
     position: relative;
     display: flex;
-    height: 90rpx;
-    border-top: 1px solid #dddddd;
+    height: 80rpx;
+    border-bottom: 1px solid #ebebeb;
 }
-.nf-shop-list-item text{
+.nf-item-text{
     flex: 1;
-    line-height: 90rpx;
-    font-size: 16px;
+    line-height: 80rpx;
+    font-size: 14px;
 }
-.nf-shop-list-item picker,.nf-shop-list-item textarea,.nf-shop-express-price{
+.nf-shop-list-item input,.nf-shop-express-price{
     flex: 2;
-    line-height: 90rpx;
-    font-size: 16px;
+    line-height: 80rpx;
+    font-size: 14px;
+}
+.nf-express-way{
+    line-height: 80rpx;
+    font-size: 14px;
 }
 .nf-shop-icon{
     position: absolute;
@@ -143,10 +190,8 @@ page{
     width: 40rpx;
     height: 40rpx;
 }
-.nf-shop-list-message{
-    height: 200rpx;
-}
-.nf-shop-list-item textarea{
+
+.nf-shop-list-item input{
     height: auto;
     width: auto;
     margin: 10rpx 0;
@@ -167,6 +212,7 @@ page{
 .nf-price-notice text{
     font-size: 26px;
     color: #fc1318;
+    font-weight: bold;
 }
 .nf-price-notice-express{
     text-align: center;
@@ -177,9 +223,11 @@ page{
 }
 .nf-shop-notice{
     padding: 10rpx 0;
-    font-size: 14px;
-    color: #666666;
+    color: #ff2d2d;
+    font-size: 12px;
 }
-.nf-shop-notice text{
-    color: #fc1318;
+.nf-shop-notice image{
+    width: 20rpx;
+    height: 20rpx;
+    vertical-align: middle;
 }

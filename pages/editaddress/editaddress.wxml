@@ -1,22 +1,28 @@
+<import src="/selectarea/selectarea.wxml"/>
 <view class="nf-edit-address">
     <view class="nf-edit-item">
         <text>收件人：</text>
-        <input placeholder="请输入收件人姓名" />
+        <input placeholder="请输入收件人姓名" maxlength="10" data-item="username" value="{{username}}" bindblur="saveInfo" bindconfirm="saveInfo"/>
     </view>
     <view class="nf-edit-item">
         <text>手机号码：</text>
-        <input placeholder="请输入收件人手机号" />
+        <input type="number" placeholder="请输入收件人手机号" maxlength="11" data-item="userPhone" value="{{userPhone}}" bindblur="saveInfo" bindconfirm="saveInfo"/>
     </view>
     <view class="nf-edit-item">
         <text>收货省市：</text>
-        <input placeholder="请输入收件人所在省市" />
+        <view class="nf-select-address" bindtap="selectAddress">
+            <text hidden="{{regionName}}" class="nf-placeholder">请选择省市地区</text>
+            <text hidden="{{!regionName}}">{{regionName}}</text>
+        </view>
     </view>
     <view class="nf-edit-item">
         <text>详细地址：</text>
-        <textarea placeholder="请输入详细地址" />
+        <input placeholder="请输入详细地址" maxlength="100" value="{{userAddress}}" data-item="userAddress" bindblur="saveInfo" bindconfirm="saveInfo"/>
     </view>
 </view>
 <view class="nf-edit-button">
-    <button class="nf-edit-btn-del">删除</button>
-    <button class="nf-edit-btn-save">保存并使用</button>
+    <button wx:if="{{!isNewAdd}}" class="nf-edit-btn-del">删除</button>
+    <button class="nf-edit-btn-save" bindtap="save">保存并使用</button>
 </view>
+<view class="nf-toast" hidden="{{hiddenToast}}">{{toast}}</view>
+<template is="wxregion" data="{{provinceData, cityData, areaData, region, isShowRegion}}"/>

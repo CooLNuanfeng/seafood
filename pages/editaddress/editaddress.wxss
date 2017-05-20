@@ -1,5 +1,6 @@
+@import "../../selectarea/selectarea.wxss";
 page{
-    background: #f4f4f4;
+    background: #fff;
 }
 .nf-edit-address{
     padding-left: 20rpx;
@@ -10,7 +11,7 @@ page{
     flex-direction: row;
     min-height: 90rpx;
     line-height: 90rpx;
-    border-bottom: 1px solid #dddddd;
+    border-bottom: 1px solid #ebebeb;
     padding: 0 15rpx;
     font-size: 14px;
 }
@@ -20,14 +21,14 @@ page{
 .nf-edit-item text{
     flex: 1;
 }
-.nf-edit-item input,.nf-edit-item textarea{
+.nf-edit-item input{
     flex: 3;
     height: 90rpx;
 }
-.nf-edit-item textarea{
-    height: 140rpx;
-    margin-top: 10rpx;
-    font-size: 14px;
+.nf-select-address{
+    flex: 3;
+    height: 90rpx;
+    line-height: 90rpx;
 }
 .nf-edit-button{
     padding: 50rpx 0;
@@ -41,12 +42,14 @@ page{
     font-size: 14px;
 }
 .nf-edit-btn-save{
-    border: 1px solid #ff3333;
-    color: #ff3333;
-    background: #ffffff;
+    color: #fff;
+    background: #14baff;
 }
 .nf-edit-btn-del{
     border: 1px solid #999999;
     color: #999999;
     background: #ffffff;
+}
+.nf-placeholder{
+    color: #888;
 }

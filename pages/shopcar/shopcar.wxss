@@ -7,7 +7,6 @@ page{
     padding-bottom: 100rpx;
 }
 .nf-shopcar-no{
-    display: none;
     padding: 100rpx 0;
     text-align: center;
 }
@@ -31,6 +30,7 @@ page{
 }
 .nf-shopcar-head{
     padding: 15rpx;
+    padding-left: 0;
     display: flex;
     height: 70rpx;
     font-size: 12px;
@@ -45,6 +45,7 @@ page{
 .nf-shopcar-select{
     width: 50rpx;
     padding: 10rpx;
+    padding-left: 25rpx;
 }
 .nf-no-select{
     width: 35rpx;
@@ -112,11 +113,27 @@ page{
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    word-break:break-all;
+}
+.nf-shop-title.nf-shop-line{
+    -webkit-line-clamp: 1;
+}
+.nf-shop-notice{
+    color: #ff2d2d;
+    font-size: 12px;
+}
+.nf-shop-notice image{
+    width: 20rpx;
+    height: 20rpx;
+    vertical-align: middle;
 }
 .nf-shop-foot{
     display: flex;
     justify-content: space-between;
     color: #666;
+}
+.nf-shop-foot text:last-child{
+    font-size: 14px;
 }
 .nf-shopcar-del{
     width: 90rpx;
@@ -160,10 +177,11 @@ page{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100rpx;
+    width: 200rpx;
     height: 100%;
     background: #ff2d2d;
     color: #fff;
+    font-size: 14px;
 }
 .nf-shopcar-disable .nf-shopcar-buy{
     background: #ccc;

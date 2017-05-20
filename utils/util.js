@@ -1,3 +1,24 @@
+import _Promise from 'bluebird';
+
+/**
+ * @param {Function} fun 接口
+ * @param {Object} options 接口参数
+ * @returns {Promise} Promise对象
+ */
+function Promise(fn, options) {
+    options = options || {};
+    return new _Promise((resolve, reject) => {
+        if (typeof fn !== 'function') {
+            reject();
+        }
+
+        options.success = resolve;
+        options.fail = reject;
+        fn(options);
+    });
+}
+
+
 function formatTime(date) {
   var year = date.getFullYear()
   var month = date.getMonth() + 1
@@ -17,5 +38,6 @@ function formatNumber(n) {
 }
 
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  Promise: Promise,
 }
