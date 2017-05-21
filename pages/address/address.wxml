@@ -4,9 +4,9 @@
 </view>
 <view hidden="{{!hasAddress}}" wx:for="{{addressArr}}">
     <view wx:if="{{item.isDefault}}">
-        <view  class="nf-address-default">
-            <image src="/images/icon/ok.png" class="nf-address-default-icon" bindtap="edit" data-edit="{{item.id}}"></image>
-            <view class="nf-address-default-info">
+        <view class="nf-address-default" >
+            <image src="/images/icon/ok.png" class="nf-address-default-icon" bindtap="selectAddress" data-edit="{{item.id}}"></image>
+            <view class="nf-address-default-info" bindtap="selectAddress" data-edit="{{item.id}}">
                 <view class="nf-address-name">
                     <text>{{item.username}}</text>
                     <text>{{item.userPhone}}</text>
@@ -19,8 +19,10 @@
         </view>
         <view class="nf-address-line"></view>
     </view>
-    <view wx:else class="nf-address-item">
-        <view class="nf-address-default-info">
+</view>
+<view hidden="{{!hasAddress}}" wx:for="{{addressArr}}">
+    <view wx:if="{{!item.isDefault}}" class="nf-address-item">
+        <view class="nf-address-default-info" bindtap="selectAddress" data-edit="{{item.id}}">
             <view class="nf-address-name">
                 <text>{{item.username}}</text>
                 <text>{{item.userPhone}}</text>
@@ -31,5 +33,5 @@
     </view>
 </view>
 <view class="nf-edit-button">
-    <button type="default" bindtap="edit"> + 新建收货地址 </button>
+    <button class="nf-add-btn"  bindtap="edit"> + 新建收货地址 </button>
 </view>

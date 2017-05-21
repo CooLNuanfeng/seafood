@@ -23,5 +23,10 @@ Page({
     wx.navigateTo({
       url: '/pages/feedback/feedback'
     });
+  },
+  goAboutus: function(){
+      wx.navigateTo({
+          url: '/pages/about/about'
+      });
   }
 })

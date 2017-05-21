@@ -1,6 +1,6 @@
 @import "../../selectarea/selectarea.wxss";
 page{
-    background: #fff;
+    background: #f6f6f6;
 }
 .nf-edit-address{
     padding-left: 20rpx;

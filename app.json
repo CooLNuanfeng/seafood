@@ -8,7 +8,8 @@
     "pages/editaddress/editaddress",
     "pages/orderDetail/orderDetail",
     "pages/feedback/feedback",
-    "pages/shopcar/shopcar"
+    "pages/shopcar/shopcar",
+    "pages/about/about"
   ],
   "window": {
     "navigationBarTitleText": "两宝家海鲜行"

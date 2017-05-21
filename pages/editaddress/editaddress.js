@@ -1,7 +1,7 @@
 import { Promise } from '../../utils/util';
 // 使用腾讯地图API
 const API = 'https://apis.map.qq.com/ws/district/v1/getchildren?key=MNZBZ-PJSW4-35BUY-DDZGQ-MEH77-FFF65';
-var addressArr;
+var addressArr,editIndex;
 Page({
     data: {
         username : '',
@@ -18,13 +18,23 @@ Page({
         regionName: ''
     },
     onLoad: function (options) {
-        console.log(options,'options')
+        //console.log(options,'options');
+        var _this = this;
         addressArr = getStorageAddress()? getStorageAddress():[];
         console.log(addressArr, 'addressArr')
         if(options.edit){
-            this.setData({
-                isNewAdd: false
-            });
+            addressArr.forEach(function(v,index){
+                if(v.id == options.edit){
+                    editIndex = index;
+                    _this.setData({
+                        username: v.username,
+                        userPhone: v.userPhone,
+                        userAddress: v.userAddress,
+                        regionName: v.regionName,
+                        isNewAdd: false
+                    });
+                }
+            })
         }
 
         const me = this;
@@ -84,7 +94,7 @@ Page({
     },
     saveInfo: function(e){
         let item = e.target.dataset.item;
-        let value = e.detail.value
+        let value = e.detail.value;
         let username = item == 'username'? value : this.data.username;
         let userPhone = item == 'userPhone'? value: this.data.userPhone;
         let userAddress = item == 'userAddress' ? value : this.data.userAddress;
@@ -92,10 +102,10 @@ Page({
             username: username,
             userPhone: userPhone,
             userAddress: userAddress
-        })
+        });
     },
     save: function(){
-        let {username, userPhone, userAddress,isNewAdd} = this.data;
+        let {username, userPhone, userAddress, isNewAdd, regionName} = this.data;
         if (isNewAdd){
             let id = new Date().getTime();
             var json = {
@@ -103,16 +113,51 @@ Page({
                 username: username,
                 userPhone: userPhone,
                 userAddress: userAddress,
-                regionName: this.data.regionName,
+                regionName: regionName,
                 isDefault: true
             }
+            addressArr.forEach(function(v,i){
+                if(v.isDefault){
+                    v.isDefault = false;
+                }
+            })
             addressArr.push(json);
             setStorageAddress(addressArr);
+        }else{
+            addressArr.forEach(function (v,i) {
+                if (v.isDefault) {
+                    v.isDefault = false;
+                }
+            })
+            addressArr[editIndex]['username'] = username;
+            addressArr[editIndex]['userPhone'] = userPhone;
+            addressArr[editIndex]['userAddress'] = userAddress;
+            addressArr[editIndex]['regionName'] = regionName;
+            addressArr[editIndex]['isDefault'] = true;
+            setStorageAddress(addressArr);
         }
-
-        wx.redirectTo({
-            url: '/pages/address/address'
+        wx.navigateBack({
+            delta: 2
         });
+    },
+    del: function () {
+        addressArr.splice(editIndex,1); 
+        if (addressArr.length > 0){
+            var flag = false;
+            addressArr.forEach(function(v){
+                if(v.isDefault){
+                    flag = true;
+                    return;
+                }
+            });
+            if (!flag){
+                addressArr[0]['isDefault'] = true;
+            }
+        } 
+        setStorageAddress(addressArr); 
+        wx.navigateBack({
+            delta: 1
+        });    
     },
     showToast: function (str) {
         var _this = this;
@@ -153,7 +198,7 @@ Page({
     confirmRegion: function (e) {
         let val = e.detail.value;
         let {region, provinceData, cityData,areaData} = this.data;
-        console.log(region,'region')
+        //console.log(region,'region')
         let regionName = provinceData[region[0]].name + '省 ' + cityData[region[1]].name + '市 ' + areaData[region[2]].fullname;
 
         this.setData({

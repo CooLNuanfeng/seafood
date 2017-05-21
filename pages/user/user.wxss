@@ -40,7 +40,7 @@ page{
 }
 .nf-user-action text{
     font-size: 12px;
-    color: #999999;
+    color: #14baff;
 }
 .nf-user-order{
     margin: 15rpx 0;
